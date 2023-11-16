@@ -17,7 +17,7 @@ pipeline {
     stage('ssh') {
       steps {
         sh '''sshagent([\'server1\']) {
-    sh \'ssh -tt -o StrictHostKeyChecking=no ubuntu@54.75.23.241\'
+    sh "ssh -tt -o StrictHostKeyChecking=no ubuntu@54.75.23.241"
 
 }
  '''
