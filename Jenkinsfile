@@ -16,7 +16,7 @@ pipeline {
 
     stage('ssh') {
       steps {
-        sh 'ssh -tt -o StrictHostKeyChecking=no ubuntu@54.75.23.241 \'ls -la\''
+        sh 'sudo ssh -tt -o StrictHostKeyChecking=no ubuntu@54.75.23.241 \'ls -la\''
       }
     }
 
