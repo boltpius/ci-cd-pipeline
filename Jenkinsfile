@@ -16,13 +16,14 @@ pipeline {
 
     stage('ssh') {
       steps {
-        sshagent(['server1']) {
-    sh "ssh -tt -o StrictHostKeyChecking=no ubuntu@54.75.23.241 'ls -la'" 
-    sh "touch fred.txt"
-    sh "scp fred.txt ubuntu@54.75.23.241:/home/ubuntu"
-}
-      }
+        sshagent(credentials: ['server1']) {
+          sh 'ssh -tt -o StrictHostKeyChecking=no ubuntu@54.75.23.241 \'ls -la\''
+          sh 'touch fred.txt'
+          sh 'scp fred.txt ubuntu@54.75.23.241:/home/ubuntu'
+        }
 
+      }
     }
+
   }
 }
